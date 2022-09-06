@@ -67,7 +67,7 @@ def validateDatabaseTable():
                 con la ejecución mensual"
                 
     with open("/airflow/xcom/return.json","w") as file:
-        json.dump({"return_value",msg},file)
+        json.dump({"return_value":msg},file)
     
     cursor.close()
     connection.close()
