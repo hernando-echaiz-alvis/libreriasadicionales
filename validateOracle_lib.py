@@ -14,15 +14,15 @@ def validateDatabaseTable():
     valueOfMonth=os.environ.get("monthofProcessValue")
     stringOfMonth = str(valueOfMonth)
     shortMonth = str(stringOfMonth)[2:]
-    prevMonthValue = (datetime.strptime(stringOfMonth + "01","%Y%m%d") + relativedelta(days=-1)).strftime("%Y%m"))
-    month_2_Value = (datetime.strptime(prevMonthValue + "01","%Y%m%d") + relativedelta(days=-1)).strftime("%Y%m"))
-    month_3_Value = (datetime.strptime(month_2_Value + "01","%Y%m%d") + relativedelta(days=-1)).strftime("%Y%m"))
+    prevMonthValue = (datetime.strptime(stringOfMonth + "01","%Y%m%d") + relativedelta(days=-1)).strftime("%Y%m")
+    month_2_Value = (datetime.strptime(prevMonthValue + "01","%Y%m%d") + relativedelta(days=-1)).strftime("%Y%m")
+    month_3_Value = (datetime.strptime(month_2_Value + "01","%Y%m%d") + relativedelta(days=-1)).strftime("%Y%m")
     tableName = tableNamePattern.format(oracleSchema=tableSchemaName,monthOfProcess_n=month_2_Value[2:],
                                       monthOfProcess=shortMonth)
     prevMonthtableName = tableNamePattern.format(oracleSchema=tableSchemaName,monthOfProcess_n=month_3_Value[2:],
                                         monthOfProcess=prevMonthValue[2:])    
-    flagRecords=os.environ.get("recordsControlFlag")
-    recordsVariationLimit=os.environ.get("recordsVariationThreshold")
+    flagRecords=int(os.environ.get("recordsControlFlag"))
+    recordsVariationLimit=int(os.environ.get("recordsVariationThreshold"))
     dsn = cx_Oracle.makedsn(host, port, sid)
     connection = cx_Oracle.connect(userName, password, dsn)
     cursor = connection.cursor()
