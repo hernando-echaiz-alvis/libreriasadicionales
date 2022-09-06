@@ -4,6 +4,7 @@ def validateDatabaseTable():
     import os
     from datetime import datetime,date
     from dateutil.relativedelta import relativedelta
+    import json
     userName=os.environ.get("oracleUser")
     password=os.environ.get("oraclePwd")
     host=os.environ.get("oracleHostIp")
@@ -66,7 +67,7 @@ def validateDatabaseTable():
                 con la ejecución mensual"
                 
     with open("/airflow/xcom/return.json","w") as file:
-        file.write(msg)
+        json.dump({"return_value",msg},file)
     
     cursor.close()
     connection.close()
