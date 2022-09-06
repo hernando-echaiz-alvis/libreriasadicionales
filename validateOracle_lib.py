@@ -67,8 +67,11 @@ def validateDatabaseTable():
                 
     with open("/airflow/xcom/return.json","w") as file:
         file.write(msg)
+    
+    cursor.close()
+    connection.close()
  
- def main():
-     validateDatabaseTable()
+def main():
+    validateDatabaseTable()
 
 main()     
