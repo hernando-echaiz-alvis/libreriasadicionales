@@ -31,13 +31,13 @@ def validateDatabaseTable():
     firstresult=cursor.fetchone()[0]
     cursor.execute(f"SELECT COUNT(1) FROM ALL_TABLES WHERE CONCAT(CONCAT(OWNER,'.'),\
                    TABLE_NAME)='{prevMonthtableName.upper()}'")    
-    secondresult=cursor.fecthome()[0]
+    secondresult=cursor.fetchone()[0]
     if firstresult==0:
         msg=f"La tabla {tableName} no existe por lo que no se podrá continuar \
         con la ejecución mensual"
     else:
         cursor.execute("SELECT COUNT(1) FROM " + tableName)
-        fourthresult=cursor.fecthome()[0]
+        fourthresult=cursor.fetchone()[0]
         if flagRecords==1:
             if secondresult==0:
                 msg=f"La tabla {prevMonthtableName} no existe por lo que no se continuará \
@@ -45,7 +45,7 @@ def validateDatabaseTable():
                 en el número de registros de la fuente"
             else:
                 cursor.execute("SELECT COUNT(1) FROM " + prevMonthtableName)
-                thirdresult=cursor.fecthome()[0]
+                thirdresult=cursor.fetchone()[0]
                 if thirdresult==0:
                     msg=f"La tabla {prevMonthtableName} no cuenta con registros por lo que no se continuará \
                     con la ejecución mensual ya que no es posible validar la tendencia \
