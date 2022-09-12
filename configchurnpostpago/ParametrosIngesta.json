@@ -12,8 +12,8 @@
         "host": "20.228.129.81",
         "port": "1521",
         "sid": "DWO",
-        "tablePrefix": "C25595.MOD_INACPREP_INPUT",
-        "tableSuffix": ""
+        "tablePrefix": "C19936.MFPM_TABLONF_",
+        "tableSuffix": "_S4"
     },
     "s3access": {
         "aws_endpoint": "https://bucketforsplit.s3.us-west-1.amazonaws.com/",
