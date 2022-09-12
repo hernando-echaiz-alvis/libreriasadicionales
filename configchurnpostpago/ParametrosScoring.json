@@ -1,12 +1,14 @@
 {
     "name": {
-        "Name_Raw_Data": "dataset_",
-        "Name_Analytic_Data": "dataset_"
+        "Name_Analytic_Data": "dataset_",
+        "Name_Model": "Prepago_Inactividad.pkl",
+        "Name_PredictTemp_Data": "predict_"
     },
     "paths": {
         "ExtCSV": ".csv",
-        "Ruta_Raw_Data": "data/raw/inactividadprepago/periodo/",
-        "Ruta_Analytic_Data": "data/analytic/inactividadprepago/periodo/"
+        "Ruta_Analytic_Data": "data/analytic/inactividadprepago/periodo/",
+        "Ruta_Model": "model/inactividadprepago/",
+        "Ruta_PredictTemp_Data": "data/predict/raw/inactividadprepago/periodo/"
     },
     "s3access": {
         "aws_endpoint": "https://bucketforsplit.s3.us-west-1.amazonaws.com/",
