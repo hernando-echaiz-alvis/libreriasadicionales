@@ -1,13 +1,13 @@
 {
     "name": {
         "Name_Analytic_Data": "dataset_",
-        "Name_Predict_Data": "predict_"
+        "Name_PredictTemp_Data": "predict_"
     },
     "paths": {
         "ExtCSV": ".csv",
-        "Ruta_Analytic_Data": "data/analytic/inactividadprepago/periodo/",
-        "Ruta_PredictTemp_Data": "data/predict/raw/inactividadprepago/periodo/",
-        "Ruta_Predict_Data": "data/predict/analytic/inactividadprepago/periodo/"
+        "Ruta_Analytic_Data": "data/analytic/churnpostpago/periodo/",
+        "Ruta_PredictTemp_Data": "data/predict/raw/churnpostpago/periodo/",
+        "Ruta_Predict_Data": "data/predict/analytic/churnpostpago/periodo/"
     },
     "tabla_prediccion": {
         "userName": "USRPREPROD",
@@ -15,13 +15,12 @@
         "host": "20.228.129.81",
         "port": "1521",
         "sid": "DWO",
-        "tablePrefix": "C25595.LI_BAJAS_PREDICCION_INACT",
-        "rowsCommit":10000
+        "tablePrefix": "pendiente"
     },
     "s3access": {
-        "aws_endpoint": "https://bucketforsplit.s3.us-west-1.amazonaws.com/",
-        "aws_s3_bucket": "bucketforsplit",
-        "aws_access_key_id": "AKIA2CTHKZ6EMDHIKIR7",
-        "aws_secret_access_key": "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"
+        "aws_endpoint": "http://192.168.100.246",
+        "aws_s3_bucket": "storage",
+        "aws_access_key_id": "kubeflow",
+        "aws_secret_access_key": "kubeflow123"
     }
-}    
+}
